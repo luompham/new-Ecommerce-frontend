@@ -23,7 +23,7 @@ const CreateProduct = () => {
         })
 
             .then(response => {
-                if (response.statusCode === 200) {
+                if (response.status === 200) {
                     alert('success')
                 }
                 console.log(response)
@@ -42,7 +42,7 @@ const CreateProduct = () => {
     return (
         <>
             <h1>Create new product</h1>
-            <form action="">
+            <form onSubmit={handleSubmit}>
                 {/* <label htmlFor="">{item}</label>
                 <input onChange={(e) => handleChangeInput(e.target.value)} name={item} value={value} type="text" /> */}
 
@@ -55,7 +55,7 @@ const CreateProduct = () => {
                     )
                 })}
 
-                <button type="submit" onClick={(e) => handleSubmit(e)}>Submit</button>
+                <button type="submit" >Submit</button>
             </form>
         </>
     )
