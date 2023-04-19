@@ -13,7 +13,7 @@ const CreateProduct = () => {
     function handleSubmit(e) {
         e.preventDefault();
         const headers = {
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2FjMGYwNzcwZWE5ZjllNjQ2NDdkNCIsImlhdCI6MTY4MTgyNjYwMCwiZXhwIjoxNjgxOTEzMDAwfQ.TB3xpehclU5-SNn8BfUdFd7iL31YnyF923ZNtDnX3bE',
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2FjMGYwNzcwZWE5ZjllNjQ2NDdkNCIsImlhdCI6MTY4MTkwMzY5MSwiZXhwIjoxNjgxOTAzNzAxfQ.SxKQ0i4KvDpY9waS4BhkDS4GS9jQXO_43eRosCmfgcw',
             'Content-Type': 'application/json'
         };
         fetch('http://localhost:5000/api/product/create', {

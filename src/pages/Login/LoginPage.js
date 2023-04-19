@@ -19,7 +19,6 @@ const LoginPage = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(input);
         fetch('http://localhost:5000/api/user/login', {
             method: 'POST',
             // body: input,
@@ -37,7 +36,7 @@ const LoginPage = () => {
                 return res.json();
             })
             .then(data => {
-                setToken(data.token)
+                setToken(data.accessToken)
             })
             .catch(err => {
                 console.log('Login failed', err.message);
