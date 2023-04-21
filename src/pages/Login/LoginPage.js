@@ -19,7 +19,7 @@ const LoginPage = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch('http://localhost:5000/api/user/login', {
+        fetch('http://localhost:5000/api/auth/login', {
             method: 'POST',
             // body: input,
             headers: {
