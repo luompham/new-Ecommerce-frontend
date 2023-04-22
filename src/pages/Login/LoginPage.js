@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { register, login } from '../../services/authService';
+
 const LoginPage = () => {
     const [token, setToken] = useState('');
     const [input, setInput] = useState({
@@ -19,28 +21,29 @@ const LoginPage = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch('http://localhost:5000/api/auth/login', {
-            method: 'POST',
-            // body: input,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(input),
-            credentials: "include",
+        login(input);
+        // fetch('http://localhost:5000/api/auth/login', {
+        //     method: 'POST',
+        //     // body: input,
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(input),
+        //     credentials: "include",
 
-        })
-            .then(res => {
-                if (res.status === 200) {
-                    alert('Login successfully!');
-                }
-                return res.json();
-            })
-            .then(data => {
-                setToken(data.accessToken)
-            })
-            .catch(err => {
-                console.log('Login failed', err.message);
-            })
+        // })
+        //     .then(res => {
+        //         if (res.status === 200) {
+        //             alert('Login successfully!');
+        //         }
+        //         return res.json();
+        //     })
+        //     .then(data => {
+        //         setToken(data.accessToken)
+        //     })
+        //     .catch(err => {
+        //         alert({ 'Login failed': err.message });
+        //     })
     }
     return (
         <>
